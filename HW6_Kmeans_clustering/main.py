@@ -15,7 +15,9 @@ colors = kmeans.cluster_centers_.astype(int)
 # Phân loại mỗi điểm dữ liệu vào một cụm
 labels = kmeans.labels_
 # Tạo một colormap để hiển thị sau khi phân đoạn
-custom_colors = np.array([[255, 165, 0], [50, 50, 50],[128, 0, 128]]) / 255  # Màu cam , màu xám ,Màu tím
+custom_colors = np.array([[255, 165, 0], [50, 50, 50],[128, 0, 128]]) / 255  # Màu cam , màu xám ,Màu tím, màu xanh lơ
+# custom_colors = np.array([[255, 165, 0], [50, 50, 50],[128, 0, 128],[0, 255, 255]]) / 255  # Màu cam , màu xám ,Màu tím, màu xanh lơ
+# custom_colors = np.array([[255, 165, 0], [50, 50, 50],[128, 0, 128],[0, 255, 255],[255, 255, 0]]) / 255  # Màu cam , màu xám ,Màu tím, màu xanh lơ, màu vàng
 custom_cmap = ListedColormap(custom_colors)
 # Hiển thị màu gốc
 fig = plt.figure(figsize=(12, 6))
