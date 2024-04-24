@@ -3,21 +3,21 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from sklearn.cluster import KMeans
 from matplotlib.colors import ListedColormap
-
 # Tạo bộ dữ liệu ngẫu nhiên về màu sắc do nhóm ko có dữ liệu có sẵn
 N = 300
+k =5
 data = np.random.randint(0, 256, size=(N, 3), dtype=np.uint8)
 # Áp dụng thuật toán K-means clustering để phân đoạn màu
-kmeans = KMeans(n_clusters=3)
+kmeans = KMeans(n_clusters=k)
 kmeans.fit(data)
 # Trích xuất các điểm trung tâm của các cụm
 colors = kmeans.cluster_centers_.astype(int)
 # Phân loại mỗi điểm dữ liệu vào một cụm
 labels = kmeans.labels_
 # Tạo một colormap để hiển thị sau khi phân đoạn
-custom_colors = np.array([[255, 165, 0], [50, 50, 50],[128, 0, 128]]) / 255  # Màu cam , màu xám ,Màu tím, màu xanh lơ
+# custom_colors = np.array([[255, 165, 0], [50, 50, 50],[128, 0, 128]]) / 255  # Màu cam , màu xám ,Màu tím
 # custom_colors = np.array([[255, 165, 0], [50, 50, 50],[128, 0, 128],[0, 255, 255]]) / 255  # Màu cam , màu xám ,Màu tím, màu xanh lơ
-# custom_colors = np.array([[255, 165, 0], [50, 50, 50],[128, 0, 128],[0, 255, 255],[255, 255, 0]]) / 255  # Màu cam , màu xám ,Màu tím, màu xanh lơ, màu vàng
+custom_colors = np.array([[255, 165, 0], [50, 50, 50],[128, 0, 128],[0, 255, 255],[255, 255, 0]]) / 255  # Màu cam , màu xám ,Màu tím, màu xanh lơ, màu vàng
 custom_cmap = ListedColormap(custom_colors)
 # Hiển thị màu gốc
 fig = plt.figure(figsize=(12, 6))
